@@ -1,19 +1,6 @@
 function PostProcessPlots(nodes, AElems, E, I)
 
     figure;
-    clf;
-    subplot(3,1,1);
-    hold on;
-    xlabel('x');
-    ylabel('Displacement (w)');
-    subplot(3,1,2);
-    hold on;
-    xlabel('x');
-    ylabel('Shear (V)');
-    subplot(3,1,3);
-    hold on;
-    xlabel('x');
-    ylabel('Bending Moment (M)');
 
     npts = 50;
     xi = linspace(-1,1,npts);
@@ -31,9 +18,11 @@ function PostProcessPlots(nodes, AElems, E, I)
         
         subplot(3,1,3);
         plot(x,M);
+        hold on;
         
         subplot(3,1,2);
         plot(x,V);
+        hold on;
     end
 
     plotZero(1, 0, nodes(end));
@@ -43,6 +32,16 @@ function PostProcessPlots(nodes, AElems, E, I)
     AdjustYAxis(1);
     AdjustYAxis(2);
     AdjustYAxis(3);
+    
+    subplot(3,1,1);
+    xlabel('x');
+    ylabel('Displacement (w)');
+    subplot(3,1,2);
+    xlabel('x');
+    ylabel('Shear (V)');
+    subplot(3,1,3);
+    xlabel('x');
+    ylabel('Bending Moment (M)');
 
 function plotZero(which, x0, xl)
     subplot(3,1,which);
