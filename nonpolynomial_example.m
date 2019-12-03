@@ -37,6 +37,6 @@ cOrder = 0;
 %% Solver
 
 % P-level (must be 3 or greater)
-p = 3;
+p = 6;
 
 SolveBeam(x, @(x)E, 0, @(x)I, 0, V, M, q, qOrder, w0, wrot0, c, cOrder, p);
